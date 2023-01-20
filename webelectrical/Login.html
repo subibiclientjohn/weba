@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+  /* The popup form - hidden by default */
+  .form-popup {
+  display: none;
+  position: absolute;
+width: 656px;
+height: 250px;
+left: 300px;
+top: 110px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 699px;
+  padding: 15px;
+  left: 300px;
+top:0px;
+  background-color: #FCD859;
+  height: 350px;
+}
+
+/* Full-width input fields */
+.form-container input[type=text] {
+  position: fixed;
+  width:500px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border-radius: 25px;
+  background: rgba(235, 232, 205, 0.92);
+  text-align: center;
+  top: 310px;
+  left: 365px;
+}
+
+
+/* Set a style for the submit/login button */
+.btn {
+    position: fixed;
+    background: #DCB900;
+    border-radius: 12px;
+            border: 0px solid #000000;
+            width: 400px;
+            height: 40px;  
+            padding: 13px; 
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 10%;
+            left: 430px;
+            top: 400px;
+}
+.btncancel{
+    position: absolute;
+    background: rgba(235, 232, 205, 0.92);
+    border-radius: 10px;
+    border: 1px solid #000000;
+            width: 10%;
+            height: 7px;  
+            padding: 13px; 
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 10%;
+            left: 585px;
+            top: 5px;
+}
+        body{
+            background-image: url('bg1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            
+        }
+        .email {
+            position: absolute;
+            background-attachment: fixed;
+            width: 50px;
+            height: 57px;
+            left: 926px;
+            top: 207px;
+            
+        }
+        .pass {
+            position: absolute;
+            width: 50px;
+            height: 57px;
+            left: 926px;
+            top: 250px;
+        }
+        .login {
+            position: absolute;
+            width: 50px;
+            height: 97px;
+            left: 963px;
+            top: 300px;
+        }
+        .fpass {
+            position: absolute;
+            width: 150px;
+            height: 107px;
+            left: 978px;
+            top: 360px;
+        }
+        .fp{
+            font-family: 'Poppins';
+            font-style: normal;
+            color: #004fb6;
+            font-size: 13px;
+        }
+        .reg {
+            position: absolute;
+            width: 248px;
+            height: 57px;
+            left: 913px;
+            top: 445px;
+        }
+        .ec {
+            position: absolute;
+            width: 200px;
+            height: 167px;
+            left: 154px;
+            top: 281px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 80px;
+            line-height: 120px;
+
+            color: #000000;
+        }
+        .logo {
+            position: absolute;
+            width: 284;
+            height: 343;
+            left: 450px;
+            top: 85px;
+        }
+        .tl {
+            position: absolute;
+            width: 250px;
+            height: 167px;
+            left: 250px;
+            top: 381px;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 30p    x;
+            color: #000000;
+        }
+        .wt {
+            position: absolute;
+            width: 353px;
+            height: 359px;
+            left: 833px;
+            top: 134px;
+            background: #FCFCFC;
+            border-radius: 17px;
+        }
+        .em{
+            border-radius: 25px;
+            border: 1px solid #000000;
+            background: rgba(235, 232, 205, 0.92);
+            padding: 10px; 
+            width: 160px;
+            height: 7px;
+        }
+        .ps{
+            border-radius: 25px;
+            border: 1px solid #000000;
+            background: rgba(235, 232, 205, 0.92);
+            padding: 10px; 
+            width: 160px;
+            height: 7px;
+        }
+        .lg{
+            background: #DCB900;
+            border-radius: 12px;
+            border: 1px solid #000000;
+            width: 120px;
+            height: 7px;  
+            padding: 13px; 
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 0%;
+        }
+        .line{
+            position: absolute;
+            width: 245px;
+            height: 0px;
+            left: 890px;
+            top: 405px;
+        }
+        .rg{
+            font-family: 'Poppins';
+            font-style: normal;
+            color: #004fb6;
+            font-size: 18px;
+        }
+        .lg1 {
+            text-align: center;
+            line-height: 250%;
+        }
+        .txt{
+            position: fixed;
+            text-align: center;
+            line-height: 150%;
+            width: 400px;
+            left: 430px;
+            top: 230px;
+        }
+         
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-buttonreg {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+  
+}
+
+/* The popup form - hidden by default */
+.form-popupreg {
+display: none;
+position: absolute;
+width: 656px;
+height: 350px;
+left: 300px;
+top: 120px;
+z-index: 9;
+}
+
+.btncancelreg{
+            position: absolute;
+    background: rgba(235, 232, 205, 0.92);
+    border-radius: 10px;
+    border: 1px solid #000000;
+            width: 10%;
+            height: 7px;  
+            padding: 13px; 
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 10%;
+            left: 585px;
+            top: 5px;
+        }
+        .regi{
+            position: absolute;
+            left: 20px;
+            top: -40px;
+            text-align: center;
+            line-height: 250%;
+        }
+        .underregi{
+            position: absolute;
+            left: 20px;
+            top: 30px;
+            text-align: center;
+            line-height: 250%;
+            font-size: large;
+        }
+        .eml{
+            position: absolute;
+            width:500px;
+            padding: 10px;
+            margin: 5px 0 22px 0;
+            border-radius: 25px;
+            background: rgba(235, 232, 205, 0.92);
+            text-align: center;
+            top: 140px;
+            left: 67px;
+        }
+        .pswd{
+            position: absolute;
+            width:500px;
+            padding: 10px;
+            margin: 5px 0 22px 0;
+            border-radius: 25px;
+            background: rgba(235, 232, 205, 0.92);
+            text-align: center;
+            top: 200px;
+            left: 67px;
+        }
+        .cpswd {
+            position: absolute;
+            width:500px;
+            padding: 10px;
+            margin: 5px 0 22px 0;
+            border-radius: 25px;
+            background: rgba(235, 232, 205, 0.92);
+            text-align: center;
+            top: 260px;
+            left: 67px;
+        }
+        .lname{
+            position: absolute;
+            width:210px;
+            padding: 10px;
+            margin: 5px 0 22px 0;
+            border-radius: 25px;
+            background: rgba(235, 232, 205, 0.92);
+            text-align: center;
+            top: 80px;
+            left: 67px;
+        }
+        .fname{
+            position: absolute;
+            width:210px;
+            padding: 10px;
+            margin: 5px 0 22px 0;
+            border-radius: 25px;
+            background: rgba(235, 232, 205, 0.92);
+            text-align: center;
+            top: 80px;
+            left: 357px;
+        }
+        .submitreg{
+            position: fixed;
+            background: #DCB900;
+            border-radius: 12px;
+            border: 0px solid #000000;
+            width: 400px;
+            height: 40px;  
+            padding: 13px; 
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 10%;
+            left: 430px;
+            top: 440px;
+        }
+        .regs{
+            outline: none;
+            border: #FCFCFC;
+            background-color: #FCFCFC;
+            font-size: 15px;
+            color: rgb(0, 83, 160);
+            
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="form-popup" id="myForm">
+  <form action="Verification.html" method="post" class="form-container">
+    <button type="button" class="btncancel" onclick="closeForm()">X</button>
+    <h1 class="lg1">Login</h1>
+    <div class="txt"><b>Enter you Email address and we will send you
+        instructions to reset your password.    </b></div>
+    <input type="text" placeholder="Email" name="email" required>
+<div>    
+    <button type="text" class="btn" onclick="window.location.href='Verification.html',true;">SEND EMAIL</button>
+</div>
+  </form>
+</div>
+
+<div class="white">
+    <div class="wt"></div>
+    <img class="logo" src="logo2.png" alt="">
+    <div class="ec">
+        electriCAL
+    </div>
+    <div class="tl">
+        Control. Conserve. Be Wise
+    </div>
+    <div class="email"> 
+        <input class="em" placeholder="Email" type="text">
+    </div>
+    <div class="pass">
+        <input type="password" class="ps" placeholder="Password" type="text">
+    
+    </div>
+    <div class="login">
+        <button class="lg" onclick="window.location='dashBoard.html';">LOG IN</button>
+    </div>
+    <div class="fpass">
+        <a class="fp" onclick="openForm()"><u><b>Forgot Password?</b></u></a>
+    </div>
+    <div class="reg">
+        <a><b>Don't have an account?</b></a>
+            <a class="regs" onclick="openFormreg()"><u><b>Register</b></u></a>
+    </div>
+    <hr class="line">
+</div>
+<div class="form-popupreg" id="myFormreg">
+    <form method="post" action="connect.php" class="form-container">
+  
+      <button type='button' class="btncancelreg" onClick="closeFormreg()">X</button>
+      <h1 class="regi">Sign up</h1>
+      <div class="underregi">It’s quick and easy.</div>
+      <input class="eml" placeholder="Enter Email" name = "eemail" required>
+
+      <input class="lname" placeholder="Last Name" name = "lname" required>
+
+      <input class="fname" placeholder="First Name" name = "fname" required>
+
+      <input class="pswd" type="password" placeholder="Enter Password" name="psw" required>
+  
+      <input class="cpswd" type="password" placeholder="Confirm Password" name="cpsw" required>
+  
+      <button class="submitreg" type="submit">REGISTER</button>
+      
+    </form>
+  </div>
+<script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    function openFormreg() {
+  document.getElementById("myFormreg").style.display = "block";
+}
+
+function closeFormreg() {
+  document.getElementById("myFormreg").style.display = "none";
+}
+    </script>
+</body>
+</html>
